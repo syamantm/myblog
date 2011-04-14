@@ -1,7 +1,7 @@
 module ApplicationHelper
   
 def logo
-    logo = image_tag("logo.png", :alt => "My Blog Logo", :class => "round")    
+    logo = image_tag("bloghome .png", :alt => "My Blog Logo", :class => "round")    
   end
   
   # Return a title on a per-page basis.

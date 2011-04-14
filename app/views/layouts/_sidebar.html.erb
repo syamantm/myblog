@@ -1,8 +1,24 @@
 <aside>
+    
     <section>
+        <header>
+            <h3>Archives</h3>
+        </header>
+		<% @allPosts = Post.all %> 
+        <ul>
+        	<% @allPosts.each do |post| %>
+            <li>
+                <%= link_to post.title, post%> on <%= post.created_at.strftime("%B %d, %Y")%>
+            </li>
+            <% end %>
+        </ul>
+    </section>
+	
+	<section>
         <header>
             <h3>Categories</h3>
         </header>
+		
         <ul>
             <li>
                 <a href="#">Lorem ipsum dolor</a>
@@ -18,34 +34,6 @@
             </li>
             <li>
                 <a href="#">Incididunt ut labore</a>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <header>
-            <h3>Archives</h3>
-        </header>
-        <ul>
-            <li>
-                <a href="#">December 2008</a>
-            </li>
-            <li>
-                <a href="#">January 2009</a>
-            </li>
-            <li>
-                <a href="#">February 2009</a>
-            </li>
-            <li>
-                <a href="#">March 2009</a>
-            </li>
-            <li>
-                <a href="#">April 2009</a>
-            </li>
-            <li>
-                <a href="#">May 2009</a>
-            </li>
-            <li>
-                <a href="#">June 2009</a>
             </li>
         </ul>
     </section>

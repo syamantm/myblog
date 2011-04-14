@@ -88,7 +88,8 @@ nav ul li.subscribe a {
     position: relative;
     margin-top: 66px;
     padding: 44px;
-    background: #467612 ;
+    /*background: #467612 ;*/
+	background: url("../images/blog.png") center no-repeat;
     /* Background-size not implemented yet */
     -webkit-background-size: 100%;
     -o-background-size: 100%;
@@ -131,18 +132,20 @@ nav ul li.subscribe a {
  ------------------------------*/
 #content {
     display: table;
+	
 }
 
 #mainContent {
     display: table-cell;
     width: 620px;
-    padding-right: 22px;
+    padding-right: 22px;	
 }
 
 aside {
     display: table-cell;
     width: 300px;
     background:  #E3E3E3;
+	padding-bottom: 150px;
 }
 
 /*------------------------------
