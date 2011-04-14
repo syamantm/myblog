@@ -2,14 +2,15 @@
     
     <section>
         <header>
-            <h3>Archives</h3>
+            <h3><%= link_to "Archive", archive_path %></h3>
         </header>
-		<% @allPosts = Post.all %> 
+		<% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 10) %> 
         <ul>
-        	<% @allPosts.each do |post| %>
+        	<% @recentPosts.each do |post| %>
             <li>
                 <%= link_to post.title, post%> on <%= post.created_at.strftime("%B %d, %Y")%>
             </li>
+			<br>
             <% end %>
         </ul>
     </section>
@@ -19,22 +20,7 @@
             <h3>Categories</h3>
         </header>
 		
-        <ul>
-            <li>
-                <a href="#">Lorem ipsum dolor</a>
-            </li>
-            <li>
-                <a href="#">Sit amet consectetur</a>
-            </li>
-            <li>
-                <a href="#">Adipisicing elit sed</a>
-            </li>
-            <li>
-                <a href="#">Do eiusmod tempor</a>
-            </li>
-            <li>
-                <a href="#">Incididunt ut labore</a>
-            </li>
+        <ul>           
         </ul>
     </section>
 </aside>

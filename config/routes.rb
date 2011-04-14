@@ -1,6 +1,12 @@
 Myblog::Application.routes.draw do
   
   
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+  
+  match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+
   resources :posts do
     resources :comments
   end
@@ -8,6 +14,11 @@ Myblog::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/archive',    :to => 'pages#archive'
+  
+  match '/posts', :to => 'posts#index'
+ 
+  
+ 
   
   root :to => 'posts#index'
   

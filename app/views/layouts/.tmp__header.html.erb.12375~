@@ -1,0 +1,34 @@
+<header>
+    <h1>The Flower Blog</h1>
+    <nav>
+        <ul>
+            <li class="selected">
+                
+				<%= link_to "Home", root_path %>
+            </li>
+            <li>                
+				<%= link_to "About", about_path %>
+            </li>
+            <li>
+                <%= link_to "Archive", archive_path %>
+            </li>
+            <li>                
+				<%= link_to "Contact", contact_path %>
+            </li>
+            <li class="subscribe">
+                <a href="#">Subscribe via. RSS</a>
+            </li>
+        </ul>
+    </nav>
+    <section id="intro">
+        <header>
+            <h2>Do you love flowers as much as we do?</h2>
+        </header>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut.
+        </p>
+        <!--<%= link_to logo, root_path %>-->
+    </section>
+</header>
