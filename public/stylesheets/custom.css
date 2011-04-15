@@ -342,3 +342,11 @@ footer ul {
 footer ul li a {
 	display: block;
 }
+
+.footerTable{
+	margin-left:auto;
+	margin-right:auto; 
+}
+.footerTableCell{
+	padding-right: 20px;	
+}

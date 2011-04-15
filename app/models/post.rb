@@ -17,13 +17,6 @@ class Post < ActiveRecord::Base
   validates :name,  :presence => true
   validates :title, :presence => true,
                     :length => { :minimum => 5 }
-  has_many :comments, :dependent => :destroy
+  has_many :comments, :dependent => :destroy  
   
-  before_save :count_comment
-  
-  private
-  
-  def count_comment
-    comment_count  
-  end
 end

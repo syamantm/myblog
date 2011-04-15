@@ -1,4 +1,4 @@
-<h1>Listing posts</h1>
+<h1>Recent posts</h1>
 
 <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 4) %> 
 <% @recentPosts.each do |post| %>
