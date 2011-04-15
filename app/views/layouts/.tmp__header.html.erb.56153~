@@ -6,14 +6,13 @@
                 <%= link_to "Home", root_path %>
             </li>
             <li>
-                <%= link_to "Archive", archive_path %>
-            </li>       
-            
+                <%= link_to "About", about_path %>
+            </li>           
+            <li>
+                <%= link_to "Contact", contact_path %>
+            </li>
             <li class="subscribe">
                 <%= link_to "Subscribe via. RSS", posts_url(:rss) %>
-            </li>
-			<li>
-                <%= link_to "About Me", about_path %>
             </li>
             <% if signed_in? %>
             <li>
@@ -21,7 +20,7 @@
             </li>
             <% else %>
             <li>
-                <%= link_to "Sign in(Admin)", signin_path %>
+                <%= link_to "Sign in", signin_path %>
             </li>
             <% end %>
         </ul>

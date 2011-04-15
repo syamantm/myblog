@@ -9,9 +9,8 @@ Myblog::Application.routes.draw do
 
   resources :posts do
     resources :comments
-  end
+  end  
   
-  match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/archive',    :to => 'pages#archive'
   
