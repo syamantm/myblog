@@ -1,8 +1,9 @@
-<h1>Contact</h1>
+<h1>About Me</h1>
 <p>
-    <h3>Email</h3>
-    Primary Email : <a href="mailto:syamantak.mukhopadhyay@gmail.com">syamantak.mukhopadhyay@gmail.com</a>    
+  You can find my details @ <%= link_to "my home page", "http://syamantak.heroku.com" %>
 </p>
+
+Or you can look me up on one of my socile profile.
 <p>
     <h3>Social Profiles</h3>
     <a href="http://uk.linkedin.com/in/syamantakmukhopadhyay"><img src="images/linkedin.png" width="18" height="18" alt="Linkedin Icon" /> Network</a>

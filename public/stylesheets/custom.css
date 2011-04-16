@@ -212,6 +212,7 @@ aside {
 			
 #comments article header a:hover {
 	text-decoration: none;
+	color: #fff;
 }
 
 #comments article p {
@@ -314,10 +315,6 @@ footer div {
 footer div section {
 	display: table-cell;
 	width: 300px;
-}
-
-footer div #about, footer div #blogroll {
-	padding-right: 20px;
 }
 		
 footer h3 {

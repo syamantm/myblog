@@ -1,0 +1,14 @@
+<footer>
+    <div>
+       
+       
+    </div>
+	<div>
+		<table class="footerTable">
+				<tr>
+					<td class="footerTableCell">&copy 2011 Syamantak Mukhopadhyay</td>
+					<td class="footerTableCell"> <%= link_to "Hosted by Heroku.com", "http://www.heroku.com/"%></td>
+				</tr>
+			</table>
+	</div>
+</footer>
