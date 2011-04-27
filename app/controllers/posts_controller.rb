@@ -23,12 +23,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.xml
   def new
-    @post = Post.new
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @post }
-    end
+    @post = Post.new    
   end
   
   # GET /posts/1/edit
@@ -38,7 +33,7 @@ class PostsController < ApplicationController
   
   # POST /posts
   # POST /posts.xml
-  def create
+  def create    
     @post = Post.new(params[:post])
     
     respond_to do |format|

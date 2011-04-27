@@ -13,10 +13,11 @@
 #
 
 class Post < ActiveRecord::Base
-  attr_accessible :comment_count
-  validates :name,  :presence => true
-  validates :title, :presence => true,
-                    :length => { :minimum => 5 }
+  attr_accessible :name, :title, :content, :comment_count
+ validates :name,  :presence => true
+ validates :title, :presence => true,
+                   :length => { :minimum => 5 }
+ validate :content, :presence => true
   has_many :comments, :dependent => :destroy  
   
 end

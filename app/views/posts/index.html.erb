@@ -20,7 +20,7 @@
   </p>
   <% end %>
   <p>Posted on <%= post.created_at.strftime("%B %d, %Y") %> by <%= post.name %></p>
-  <p><%= post.content %></p>
+  <p><%= post.content.html_safe %></p>
 <% end %>
 
 <% if signed_in? %>

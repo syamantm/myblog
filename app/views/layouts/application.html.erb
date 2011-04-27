@@ -17,6 +17,9 @@
 		<%= render 'layouts/sidebar' %>
 		
 	</div>
-	 <%= render 'layouts/footer' %>
+	 <!-- <%= render 'layouts/footer' %> -->
+	 <div>
+	 <%= debug(params) if Rails.env.development? %>
+	 </div>
   </body>
 </html>
