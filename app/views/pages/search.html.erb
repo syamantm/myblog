@@ -1,0 +1,32 @@
+<h1>Archive</h1>
+<% @allPosts = Post.paginate(:per_page => 4, :page => params[:page])%>
+<% @allPosts.each do |post| %> 
+  
+  	<!-- 
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+	-->
+  <h3><%= link_to post.title, post %></h3>
+  <% if signed_in? %>
+  <p>
+  	<%= link_to 'Show', post %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+  </p>
+  <% end %>
+  <p>
+  	Posted on <%= post.created_at.strftime("%B %d, %Y") %> by <%= post.name %></p>
+	<p>
+	<% if !post.comment_count.nil? %>
+	Comments(<%= post.comment_count%>)
+	<% else %>
+	No Comments
+	<% end %>
+  </p>
+  <p></p>
+<% end %> 
+<%= will_paginate @allPosts %>
