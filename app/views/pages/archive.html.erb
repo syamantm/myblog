@@ -1,6 +1,6 @@
 <h1>Archive</h1>
-<% @allPosts = Post.all%>
-<% @allPosts.each do |post| %>
+<% @allPosts = Post.paginate(:per_page => 4, :page => params[:page])%>
+<% @allPosts.each do |post| %> 
   
   	<!-- 
     <td><%= post.name %></td>
@@ -28,4 +28,5 @@
 	<% end %>
   </p>
   <p></p>
-<% end %>
+<% end %> 
+<%= will_paginate @allPosts %>

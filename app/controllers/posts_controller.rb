@@ -4,9 +4,17 @@ class PostsController < ApplicationController
   
   # GET /posts
   # GET /posts.xml
+  #def index
+  #  @posts = Post.all  
+  #end
   def index
-    @posts = Post.all   
-   
+    @posts = Post.paginate(:per_page => 3, :page => params[:page])
+  end
+  
+  
+  def self.archive
+    paginate :per_page => 5, :page => page,           
+           :order => 'created_at'
   end
   
   # GET /posts/1

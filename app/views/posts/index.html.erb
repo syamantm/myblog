@@ -1,7 +1,7 @@
 <h1>Recent posts</h1>
 
-<% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 4) %> 
-<% @recentPosts.each do |post| %>
+<!-- <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 4) %> --> 
+<% @posts.each do |post| %>
   
   	<!-- 
     <td><%= post.name %></td>
@@ -26,3 +26,4 @@
 <% if signed_in? %>
 <%= link_to 'New Post', new_post_path %>
 <% end %>
+<%= will_paginate @posts %>
