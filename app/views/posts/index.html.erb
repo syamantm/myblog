@@ -20,7 +20,10 @@
   </p>
   <% end %>
   <p>Posted on <%= post.created_at.strftime("%B %d, %Y") %> by <%= post.name %></p>
-  <p><%= post.content.html_safe %></p>
+  <p>
+  	<%= truncate_words(post.content).html_safe %>
+	<%= link_to "[more]", post%>
+  </p>
   <p>
 	<% if !post.comment_count.nil? %>
 	Comments(<%= post.comment_count%>)
