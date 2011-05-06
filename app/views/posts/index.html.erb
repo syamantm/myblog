@@ -1,4 +1,4 @@
-<h1>Recent posts</h1>
+<h1>Archive</h1>
 
 <!-- <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 4) %> --> 
 <% @posts.each do |post| %>
@@ -21,6 +21,13 @@
   <% end %>
   <p>Posted on <%= post.created_at.strftime("%B %d, %Y") %> by <%= post.name %></p>
   <p><%= post.content.html_safe %></p>
+  <p>
+	<% if !post.comment_count.nil? %>
+	Comments(<%= post.comment_count%>)
+	<% else %>
+	No Comments
+	<% end %>
+  </p>
 <% end %>
 
 <% if signed_in? %>

@@ -12,14 +12,14 @@ Myblog::Application.routes.draw do
   end  
   
   match '/about',   :to => 'pages#about'
-  match '/archive',    :to => 'pages#archive'
+  match '/archive',    :to => 'posts#index'
   
   match '/posts', :to => 'posts#index'
  
   
  
   
-  root :to => 'posts#index'
+  root :to => 'pages#home'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
