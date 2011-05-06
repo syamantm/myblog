@@ -233,13 +233,13 @@ form {
 }
 
 form p {
-	display: table;
+	/*display: table;*/
 	margin-bottom: 22px;
 	padding: 0 22px;
 }
 
 form label {
-	display: table-cell;
+	/*display: table-cell;*/
 	width: 140px;
 	padding-right: 20px;
 	text-align: right;
@@ -248,7 +248,7 @@ form label {
 }
 	
 form input[type="text"], form input[type="email"], form input[type="url"] {
-	display: table-cell;
+	/*display: table-cell;*/
 	width: 300px;
 	height: 20px;
 	border: 1px solid #d7d7d7;

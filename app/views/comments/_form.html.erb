@@ -1,15 +1,15 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :commenter %>
+   
+    <%= f.text_field :commenter %> <%= f.label :name %>
   </div>
   <div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
+    
+    <%= f.text_field :website %> <%= f.label :website , "Website (or public profile)" %> 
   </div>
   <div class="field">
-    <%= f.label :text %>
-    <%= f.text_area :body %>
+    
+    <%= f.text_area :body %> <%= f.label :text %>
   </div>
   <div class="actions">
     <%= f.submit %>
