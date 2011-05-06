@@ -1,0 +1,51 @@
+<aside>
+    <section>
+        <header>
+            <h3><%= link_to "Archive", archive_path %></h3>
+        </header>
+        <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 10) %>
+        <ul>
+            <% @recentPosts.each do |post| %>
+            <li>
+                <%= link_to post.title, post %>on <%= post.created_at.strftime("%B %d, %Y") %>
+            </li>
+            <br>
+            <% end %>
+        </ul>
+    </section>
+    <section id="popular">
+        <header>
+            <h3>Popular</h3>
+        </header>
+        <ul>
+            <% @popularPosts = popular_posts %>
+            <% @popularPosts.each do |post| %>
+            <li>
+                <%= link_to post.title, post %>
+            </li>
+            <% end %>
+        </ul>
+    </section>
+    <section id="blogroll">
+        <header>
+            <h3>Blogroll</h3>
+        </header>
+        <ul>
+            <li>
+                <%= link_to "Spring Blog", "http://blog.springsource.com/" %>
+            </li>
+            <li>
+                <%= link_to "Java Code Geeks", "http://www.javacodegeeks.com/" %>
+            </li>
+            <li>
+                <%= link_to "Martin Fowler", "http://martinfowler.com/" %>
+            </li>
+            <li>
+                <%= link_to "Scott Guthrie", "http://weblogs.asp.net/scottgu/" %>
+            </li>
+            <li>
+                <%= link_to "Paul Sturgess", "http://paulsturgess.co.uk/" %>
+            </li>
+        </ul>
+    </section>
+</aside>

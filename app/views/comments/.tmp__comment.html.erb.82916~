@@ -1,0 +1,19 @@
+<article>
+    <header>
+        <% if !comment.website.nil? %>
+        <%= link_to comment.commenter,comment.website %>on <%= comment.created_at.strftime("%B %d, %Y") %>
+        <% else %>
+        <%= comment.commenter %> on <%= comment.created_at.strftime("%B %d, %Y") %>
+        <% end %>
+    </header>
+    <p>
+        <%= comment.body %>
+    </p>
+    <% if signed_in? %>
+    <p>
+        <%= link_to 'Destroy Comment', [comment.post, comment],
+        :confirm => 'Are you sure?',
+        :method => :delete %>
+    </p>
+    <% end %>
+</article>
