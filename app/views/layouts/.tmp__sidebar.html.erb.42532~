@@ -31,6 +31,13 @@
             <h3>Blogroll</h3>
         </header>
         <ul>
+        	<li>
+				<%= link_to "Semanticfocus", "http://www.semanticfocus.com/"%>
+			</li>
+			<li>
+				<%= link_to "DBPedia Blog", "http://blog.dbpedia.org/"%>
+			</li>
+			
             <li>
                 <%= link_to "Spring Blog", "http://blog.springsource.com/" %>
             </li>
@@ -43,9 +50,15 @@
             <li>
                 <%= link_to "Scott Guthrie", "http://weblogs.asp.net/scottgu/" %>
             </li>
+			<li>
+				<%= link_to "Railscasts", "http://railscasts.com/" %>
+			</li>
             <li>
+                <%= link_to "Yehuda Katz", "http://yehudakatz.com/" %>
+            </li>	
+			<li>
                 <%= link_to "Paul Sturgess", "http://paulsturgess.co.uk/" %>
-            </li>
+            </li>		
         </ul>
     </section>
 </aside>

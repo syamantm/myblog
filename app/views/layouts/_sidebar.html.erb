@@ -1,15 +1,14 @@
 <aside>
     <section>
         <header>
-            <h3><%= link_to "Archive", archive_path %></h3>
+            <h3>Recent Posts</h3>
         </header>
-        <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 10) %>
+        <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 5) %>
         <ul>
             <% @recentPosts.each do |post| %>
             <li>
-                <%= link_to post.title, post %>on <%= post.created_at.strftime("%B %d, %Y") %>
-            </li>
-            <br>
+                <%= link_to post.title, post %>
+            </li>           
             <% end %>
         </ul>
     </section>
@@ -59,6 +58,19 @@
 			<li>
                 <%= link_to "Paul Sturgess", "http://paulsturgess.co.uk/" %>
             </li>		
+        </ul>
+    </section>
+	 <section>
+        <header>
+            <h3><%= link_to "Archive", archive_path %></h3>
+        </header>
+        <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 5) %>
+        <ul>
+            <% @recentPosts.each do |post| %>
+            <li>
+                <%= link_to post.title, post %>
+            </li>           
+            <% end %>
         </ul>
     </section>
 </aside>

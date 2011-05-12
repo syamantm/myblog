@@ -281,18 +281,21 @@ aside section {
 
 aside section ul {
 	margin: 0 0 0 22px;
-	list-style: none;
+	list-style: square;
 }
 	
 aside section ul li a {
 	display: block;
-	text-decoration: none;
-	color: #000;
+    text-decoration: none;
+    color: #0066CC;
+
 }
+
 		
 aside section ul li a:hover {
-	text-decoration: underline;
+	text-decoration: underline;	
 }
+
 
 
 
@@ -349,3 +352,5 @@ footer ul li a {
 .footerTableCell{
 	padding-right: 20px;	
 }
+
+
