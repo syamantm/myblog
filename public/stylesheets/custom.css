@@ -157,6 +157,8 @@ nav ul li.subscribe a {
     display: table-cell;
     width: 620px;
     padding-right: 22px;
+	color:#000;
+	font-size: 16px;
 }
 
 #aside {
@@ -178,6 +180,11 @@ nav ul li.subscribe a {
 .blogPost header p a:hover {
     text-decoration: none;
     color: #000;
+}
+
+.blogPost a {
+    text-decoration: none;
+    color: #0033FF;
 }
 
 /*
