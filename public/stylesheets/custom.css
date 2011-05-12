@@ -1,6 +1,25 @@
 /*------------------------------
  =BASIC SETUP
  ------------------------------*/
+/*------------------------------
+ =Fonts
+ -------------------------------*/
+body, section, article, aside, textarea, #content, #mainContent, #aside, #comments,  .blogPost, a.url {
+    font-family: Georgia, "Bitstream Charter", sans-serif;
+}
+
+h1, h2, h3, nav, ul, input[type = submit] {
+    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+}
+
+pre {
+    font-family: "Courier 10 Pitch", Courier, monospace;
+}
+
+code {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
 /* Makeshift CSS Reset */ * {
     margin: 0;
     padding: 0;
@@ -15,7 +34,7 @@ body {
     margin: 0 auto;
     padding: 22px 0;
     width: 940px;
-    font: 13px / 22px Helvetica, Arial, sans-serif;
+    /*font: 13px / 22px Helvetica, Arial, sans-serif;*/
     background: #F0F0F0;
 }
 
@@ -89,7 +108,7 @@ nav ul li.subscribe a {
     margin-top: 66px;
     padding: 44px;
     /*background: #467612 ;*/
-	background: url("../images/blog.png") center no-repeat;
+    background: url("../images/blog.png") center no-repeat;
     /* Background-size not implemented yet */
     -webkit-background-size: 100%;
     -o-background-size: 100%;
@@ -132,20 +151,19 @@ nav ul li.subscribe a {
  ------------------------------*/
 #content {
     display: table;
-	
 }
 
 #mainContent {
     display: table-cell;
     width: 620px;
-    padding-right: 22px;	
+    padding-right: 22px;
 }
 
-aside {
+#aside {
     display: table-cell;
     width: 300px;
-    background:  #E3E3E3;
-	padding-bottom: 150px;
+    background: #E5E5E5;
+    padding-bottom: 150px;
 }
 
 /*------------------------------
@@ -163,16 +181,15 @@ aside {
 }
 
 /*
-.blogPost div {
-    /* Column-count not implemented yet */
-    /*-moz-column-count: 2;
-    -webkit-column-count: 2;
-    /* Column-gap not implemented yet */
-    /*-moz-column-gap: 22px;
-    -webkit-column-gap: 22px;
-}
-*/
-
+ .blogPost div {
+ /* Column-count not implemented yet */
+/*-moz-column-count: 2;
+ -webkit-column-count: 2;
+ /* Column-gap not implemented yet */
+/*-moz-column-gap: 22px;
+ -webkit-column-gap: 22px;
+ }
+ */
 .blogPost img {
     margin: 22px 0;
     -webkit-box-shadow: 3px 3px 7px #777;
@@ -269,7 +286,7 @@ form input[type="submit"] {
 /*------------------------------
 =SIDEBAR
 ------------------------------*/
-aside section {
+#aside section {
 	margin: 22px 0 0 22px;
 	padding: 11px 22px;
 	/*background: url("images/sidebar_section_background.png") repeat-x;*/
@@ -279,21 +296,36 @@ aside section {
 	-webkit-border-radius: 11px;
 }
 
-aside section ul {
+#aside section ul {
 	margin: 0 0 0 22px;
 	list-style: square;
 }
 	
-aside section ul li a {
+#aside section ul li a {
 	display: block;
     text-decoration: none;
     color: #0066CC;
 
 }
 
+#aside a {
+	display: block;
+    text-decoration: none;
+    color: #000;
+
+}
+
+#aside a:hover {
+	display: block;
+    text-decoration: none;
+    color: #fff;
+
+}
+
 		
-aside section ul li a:hover {
+#aside section ul li a:hover {
 	text-decoration: underline;	
+	color: #fff;
 }
 
 
