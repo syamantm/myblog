@@ -11,6 +11,17 @@ class PostsController < ApplicationController
     @posts = Post.paginate(:per_page => 6, :page => params[:page])
   end
   
+  def monthlyarchive
+    monthyear = params[:format]
+    
+    @firstdate = DateTime.parse(monthyear)
+    logger.debug(@firstdate)
+    @lastdate = DateTime.new(@firstdate.year, @firstdate.month, @firstdate.day).next_month-1
+    logger.debug(@lastdate)
+    @posts_by_month = Post.paginate(:per_page => 6 , :page => params[:page], :conditions => ["created_at between ? and ?", @firstdate, @lastdate])
+    @month = monthyear
+  end
+  
   
   
   # GET /posts/1

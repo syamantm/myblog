@@ -64,15 +64,9 @@
             <h3><%= link_to "Archive", archive_path %></h3>
         </header>
 		<% @posts_by_month = archive_record %>
-        <% @posts_by_month.each do |monthname, posts| %>		
-        <%= monthname%>
-        <ul>
-            <% posts.each do |post| %>
-            <li>
-                <%= link_to post.title, post %>
-            </li>
-            <% end %>
-        </ul>
+        <% @posts_by_month.each do |monthname, posts| %>
+		<% @month  = monthname%>		
+        <%= link_to monthname.to_s+" ("+posts.count.to_s+")", monthlyarchive_path(@month)%>        
         <% end %>
     </section>
 </aside>

@@ -1,4 +1,4 @@
-<h1>Archive</h1>
+<h1><%= @month %></h1>
 
 <!-- <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 4) %> --> 
 <% @posts_by_month.each do |post| %>
@@ -36,4 +36,4 @@
 <% if signed_in? %>
 <%= link_to 'New Post', new_post_path %>
 <% end %>
-<!--<%= will_paginate @monthlyposts %>-->
+<%= will_paginate @posts_by_month %>
