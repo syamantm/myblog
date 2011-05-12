@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   #end
   def index
     @posts = Post.paginate(:per_page => 6, :page => params[:page])
-  end
+  end  
   
   def monthlyarchive
     monthyear = params[:format]
