@@ -8,7 +8,7 @@
             <% @recentPosts.each do |post| %>
             <li>
                 <%= link_to post.title, post %>
-            </li>
+            </li>           
             <% end %>
         </ul>
     </section>
@@ -30,12 +30,13 @@
             <h3>Blogroll</h3>
         </header>
         <ul>
-            <li>
-                <%= link_to "Semanticfocus", "http://www.semanticfocus.com/" %>
-            </li>
-            <li>
-                <%= link_to "DBPedia Blog", "http://blog.dbpedia.org/" %>
-            </li>
+        	<li>
+				<%= link_to "Semanticfocus", "http://www.semanticfocus.com/"%>
+			</li>
+			<li>
+				<%= link_to "DBPedia Blog", "http://blog.dbpedia.org/"%>
+			</li>
+			
             <li>
                 <%= link_to "Spring Blog", "http://blog.springsource.com/" %>
             </li>
@@ -48,31 +49,28 @@
             <li>
                 <%= link_to "Scott Guthrie", "http://weblogs.asp.net/scottgu/" %>
             </li>
-            <li>
-                <%= link_to "Railscasts", "http://railscasts.com/" %>
-            </li>
+			<li>
+				<%= link_to "Railscasts", "http://railscasts.com/" %>
+			</li>
             <li>
                 <%= link_to "Yehuda Katz", "http://yehudakatz.com/" %>
-            </li>
-            <li>
+            </li>	
+			<li>
                 <%= link_to "Paul Sturgess", "http://paulsturgess.co.uk/" %>
-            </li>
+            </li>		
         </ul>
     </section>
-    <section>
+	 <section>
         <header>
             <h3><%= link_to "Archive", archive_path %></h3>
         </header>
-		<% @posts_by_month = archive_record %>
-        <% @posts_by_month.each do |monthname, posts| %>		
-        <%= monthname%>
+        <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 5) %>
         <ul>
-            <% posts.each do |post| %>
+            <% @recentPosts.each do |post| %>
             <li>
                 <%= link_to post.title, post %>
-            </li>
+            </li>           
             <% end %>
         </ul>
-        <% end %>
     </section>
 </aside>

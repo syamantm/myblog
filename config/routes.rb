@@ -15,6 +15,7 @@ Myblog::Application.routes.draw do
   match '/archive',    :to => 'posts#index'
   
   match '/posts', :to => 'posts#index'
+  match '/monthlyarchive', :to => 'posts#monthlyarchive'
  
   
  

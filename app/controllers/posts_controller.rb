@@ -12,10 +12,6 @@ class PostsController < ApplicationController
   end
   
   
-  def self.archive
-    paginate :per_page => 5, :page => page,           
-           :order => 'created_at'
-  end
   
   # GET /posts/1
   # GET /posts/1.xml
