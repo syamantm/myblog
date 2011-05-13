@@ -14,12 +14,14 @@
 
 class Post < ActiveRecord::Base
   attr_accessible :name, :title, :content, :comment_count
- validates :name,  :presence => true
- validates :title, :presence => true,
+  validates :name,  :presence => true
+  validates :title, :presence => true,
                    :length => { :minimum => 5 }
- validate :content, :presence => true
+  validate :content, :presence => true
   has_many :comments, :dependent => :destroy  
   
- 
+  def to_param
+    "#{id}-#{title.gsub(/[^a-z1-9]+/i, '-')}"
+  end
   
 end
