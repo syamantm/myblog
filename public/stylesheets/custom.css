@@ -389,10 +389,10 @@ footer ul li a {
 	margin-right:auto; 
 }
 .footerTableCell{
-	padding-right: 20px;	
+	padding-right: 20px;		
 }
 
-td {
+.socialTableCell {
   width: 70%;
   padding: 1em;
 }
