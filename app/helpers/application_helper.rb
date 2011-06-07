@@ -7,7 +7,7 @@ def logo
   # Return a title on a per-page basis.
   
   def title
-    base_title = "Syamantak Mukhopadhyay - Web Developer"
+    base_title = "Syamantak - Web Blog"
     if @title.nil?
       base_title
     else
