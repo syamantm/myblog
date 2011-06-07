@@ -3,22 +3,29 @@
 </p>
 <section>
     <article class="blogPost">
-        <header>           
-			<table>
-				<tr>
-					<td class='twshare left'>
-                    <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
-                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
-                    </script>						
-					</td>
+        <header>
+            <table>
+                <tr>
+                    <td class='twshare left'>
+                        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
+                        <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
+                        </script>
+                    </td>
 					<td>
-						<script src="http://connect.facebook.net/en_US/all.js#xfbml=1">
-                </script>
-                <fb:like href="" layout="button_count" show_faces="false" width="450" font="">
-                </fb:like>
-					</td>
-				</tr>
-			</table>
+                        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+                        </script>
+                        <script type="in/share">
+                        </script>
+                    </td>
+                    <td>
+                        <script src="http://connect.facebook.net/en_US/all.js#xfbml=1">
+                        </script>
+                        <fb:like href="" layout="button_count" show_faces="false" width="450" font="">
+                        </fb:like>
+                    </td>
+                    
+                </tr>
+            </table>
             <h2><%= @post.title %></h2>
             <p>
                 Posted on <%= @post.created_at.strftime("%B %d, %Y") %>by <%= @post.name %>

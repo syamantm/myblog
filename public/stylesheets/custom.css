@@ -392,3 +392,7 @@ footer ul li a {
 	padding-right: 20px;	
 }
 
+td {
+  width: 70%;
+  padding: 1em;
+}
