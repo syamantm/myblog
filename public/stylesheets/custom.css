@@ -393,6 +393,6 @@ footer ul li a {
 }
 
 .socialTableCell {
-  width: 70%;
-  padding: 1em;
+  width: 50%;
+  padding-right: 0.3em;
 }
