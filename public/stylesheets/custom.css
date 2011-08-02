@@ -183,7 +183,8 @@ nav ul li.subscribe a {
     
 }
 
-blogPost a:visited {
+.blogPost a:visited {
+	text-decoration: none;
   color: #069;
 }
 
