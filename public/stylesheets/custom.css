@@ -177,15 +177,18 @@ nav ul li.subscribe a {
     color: #777;
 }
 
+.blogPost a {
+    text-decoration: none;
+    color: #0066CC;
+    
+}
+
 .blogPost header p a:hover {
     text-decoration: none;
     color: #000;
 }
 
-.blogPost a {
-    text-decoration: none;
-    color: #0033FF;
-}
+
 
 /*
  .blogPost div {
