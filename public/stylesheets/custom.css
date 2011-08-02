@@ -179,8 +179,12 @@ nav ul li.subscribe a {
 
 .blogPost a {
     text-decoration: none;
-    color: #0066CC;
+    color: #069;
     
+}
+
+blogPost a:visited {
+  color: #069;
 }
 
 .blogPost header p a:hover {
