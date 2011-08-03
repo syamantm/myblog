@@ -27,13 +27,14 @@
                     
                 </tr>
             </table>
-            <h2><%= @post.title %></h2>
+            <h2 property="dc:title"><%= @post.title %></h2>
             <p>
-                Posted on <%= @post.created_at.strftime("%B %d, %Y") %> by <%= @post.name %>
+               Posted on <span property="dc:created"><%= @post.created_at.strftime("%B %d, %Y") %></span> by <span property="dc:creator"><%= @post.name %></span>
             </p>
         </header>
         <p>
-            <div>
+            <div about="<%= @post %>" typeof="sioc:Item foaf:Document">
+            	
                 <%= @post.content.html_safe %>
             </div>
         </p>
