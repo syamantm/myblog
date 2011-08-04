@@ -14,4 +14,6 @@ def logo
       "#{base_title} | #{@title}"
     end
   end
+  
+  
 end

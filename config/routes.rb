@@ -17,7 +17,7 @@ Myblog::Application.routes.draw do
   match '/posts', :to => 'posts#index'
   match '/monthlyarchive', :to => 'posts#monthlyarchive'
  
-  
+  match '/searchtag', :to => 'posts#search_tags'
  
   
   root :to => 'pages#home'

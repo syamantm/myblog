@@ -1,49 +1,51 @@
 <p class="notice">
-    <%= notice %>
+	<%= notice %>
 </p>
 <section>
-    <article class="blogPost">
-        <header>
-            <table>
-                <tr>
-                	
-                    <td class='socialTableCell'>
-                        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
-                        <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
-                        </script>
-                    </td>
-                    <td class="socialTableCell">
-                        <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-                        </script>
-                        <script type="in/share">
-                        </script>
-                    </td>
-                    <td class="socialTableCell">
-                        <script src="http://connect.facebook.net/en_US/all.js#xfbml=1">
-                        </script>
-                        <fb:like href="" layout="button_count" show_faces="false" width="450" font="">
-                        </fb:like>
-                    </td>
-                    
-                </tr>
-            </table>
-            <h2 property="dc:title"><%= @post.title %></h2>
-            <p>
-               Posted on <span property="dc:created"><%= @post.created_at.strftime("%B %d, %Y") %></span> by <span property="dc:creator"><%= @post.name %></span>
-            </p>
-        </header>
-        <p>
-            <div about="<%= @post %>" typeof="sioc:Item foaf:Document">
-            	
-                <%= @post.content.html_safe %>
-            </div>
-        </p>
-    </article>
+	<article class="blogPost">
+		<header>
+			<table>
+				<tr>
+
+					<td class='socialTableCell'>
+					<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
+					<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+					</td>
+					<td class="socialTableCell">
+					<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+					<script type="in/share">
+					</script>
+					</td>
+					<td class="socialTableCell">
+					<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+					<fb:like href="" layout="button_count" show_faces="false" width="450" font="">
+					</fb:like>
+					</td>
+
+				</tr>
+			</table>
+			<h2 property="dc:title"><%= @post.title %></h2>
+			<p>
+				Posted on
+				<span property="dc:created"><%= @post.created_at.strftime("%B %d, %Y") %></span> by
+				<span property="dc:creator"><%= @post.name %></span>
+			</p>
+		</header>
+		<p>
+			<div about="<%= posts_url(@post) %>" typeof="sioc:Item foaf:Document">
+				<%= @post.content.html_safe %>
+			</div>
+		</p>
+		<h4>Tags : </h4> <% for tag in @post.tags%>
+		<span rel="tag:tag" typeof="skos:Concept" property="rdfs:label skos:prefLabel"><%= link_to tag.name, searchtag_path(:tag => tag.name) %></span>; <% end %>
+		<p>
+		</p>
+	</article>
 </section>
 <section id="comments">
-    <h3>Comments(<%= @post.comment_count %>)</h3>
-    <%= render :partial => "comments/comment",
-    :collection => @post.comments %>
+	<h3>Comments(<%= @post.comment_count %>)</h3>
+	<%= render :partial => "comments/comment",
+	:collection => @post.comments %>
 </section>
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>

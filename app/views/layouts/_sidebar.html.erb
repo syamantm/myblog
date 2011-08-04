@@ -1,77 +1,86 @@
 <aside>
-    <section>
-        <header>
-            <h3>Recent Posts</h3>
-        </header>
-        <% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 5) %>
-        <ul>
-            <% @recentPosts.each do |post| %>
-            <li>
-                <%= link_to post.title, post %>
-            </li>
-            <% end %>
-        </ul>
-    </section>
-    <section id="popular">
-        <header>
-            <h3>Popular</h3>
-        </header>
-        <ul>
-            <% @popularPosts = popular_posts %>
-            <% @popularPosts.each do |post| %>
-            <li>
-                <%= link_to post.title, post %>
-            </li>
-            <% end %>
-        </ul>
-    </section>
-    <section id="blogroll">
-        <header>
-            <h3>Blogroll</h3>
-        </header>
-        <ul>
-            <li>
-                <%= link_to "Semanticfocus", "http://www.semanticfocus.com/" %>
-            </li>
-            <li>
-                <%= link_to "DBPedia Blog", "http://blog.dbpedia.org/" %>
-            </li>
-            <li>
-                <%= link_to "Spring Blog", "http://blog.springsource.com/" %>
-            </li>
-            <li>
-                <%= link_to "Java Code Geeks", "http://www.javacodegeeks.com/" %>
-            </li>
-            <li>
-                <%= link_to "Martin Fowler", "http://martinfowler.com/" %>
-            </li>
-            <li>
-                <%= link_to "Scott Guthrie", "http://weblogs.asp.net/scottgu/" %>
-            </li>
-            <li>
-                <%= link_to "Railscasts", "http://railscasts.com/" %>
-            </li>
-            <li>
-                <%= link_to "Yehuda Katz", "http://yehudakatz.com/" %>
-            </li>
-            <li>
-                <%= link_to "Paul Sturgess", "http://paulsturgess.co.uk/" %>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <header>
-            <h3><%= link_to "Archive", archive_path %></h3>
-        </header>
+	<section>
+		<header>
+			<h3>Recent Posts</h3>
+		</header>
+		<% @recentPosts = Post.find(:all, :order => "created_at desc", :limit => 5) %>
+		<ul>
+			<% @recentPosts.each do |post| %>
+			<li>
+				<%= link_to post.title, post %>
+			</li>
+			<% end %>
+		</ul>
+	</section>
+
+	<section>
+		<header>
+			<h3><%= link_to "Archive", archive_path %></h3>
+		</header>
 		<% @posts_by_month = archive_record %>
 		<ul>
-        <% @posts_by_month.each do |monthname, posts| %>
-		<% @month  = monthname%>		
-		<li>
-        <%= link_to monthname.to_s+" ("+posts.count.to_s+")", monthlyarchive_path(@month)%>
-        </li>
-        <% end %>
-		
+			<% @posts_by_month.each do |monthname, posts| %>
+			<% @month  = monthname%>
+			<li>
+				<%= link_to monthname.to_s+" ("+posts.count.to_s+")", monthlyarchive_path(@month)%>
+			</li>
+			<% end %>
 		</ul>
-    </section>
+	</section>
+	<section id="tagCloud">
+		<header>
+			<h3>Tag Cloud</h3>
+		</header>
+		<% @tags = tag_cloud_arr %>
+		<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+		<%= link_to tag.name, searchtag_path(:tag => tag.name), :class => css_class %>;
+		<% end %>
+	</section>
+	<section id="popular">
+		<header>
+			<h3>Popular</h3>
+		</header>
+		<ul>
+			<% @popularPosts = popular_posts %>
+			<% @popularPosts.each do |post| %>
+			<li>
+				<%= link_to post.title, post %>
+			</li>
+			<% end %>
+		</ul>
+	</section>
+	<section id="blogroll">
+		<header>
+			<h3>Blogroll</h3>
+		</header>
+		<ul>
+			<li>
+				<%= link_to "Semanticfocus", "http://www.semanticfocus.com/" %>
+			</li>
+			<li>
+				<%= link_to "DBPedia Blog", "http://blog.dbpedia.org/" %>
+			</li>
+			<li>
+				<%= link_to "Spring Blog", "http://blog.springsource.com/" %>
+			</li>
+			<li>
+				<%= link_to "Java Code Geeks", "http://www.javacodegeeks.com/" %>
+			</li>
+			<li>
+				<%= link_to "Martin Fowler", "http://martinfowler.com/" %>
+			</li>
+			<li>
+				<%= link_to "Scott Guthrie", "http://weblogs.asp.net/scottgu/" %>
+			</li>
+			<li>
+				<%= link_to "Railscasts", "http://railscasts.com/" %>
+			</li>
+			<li>
+				<%= link_to "Yehuda Katz", "http://yehudakatz.com/" %>
+			</li>
+			<li>
+				<%= link_to "Paul Sturgess", "http://paulsturgess.co.uk/" %>
+			</li>
+		</ul>
+	</section>
 </aside>

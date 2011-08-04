@@ -404,3 +404,23 @@ footer ul li a {
   width: 50%;
   padding-right: 0.3em;
 }
+
+/* tagging stuff */
+
+#tagCloud a{
+	color: #0066CC;
+	display: inline;
+	text-decoration: none;    
+}
+
+#tagCloud a:hover{
+	color: #fff;
+	display: inline;
+	text-decoration: none;    
+}
+
+.css1 { font-size: 0.1em; }
+.css2 { font-size: 0.5em; }
+.css3 { font-size: 0.9em; }
+.css4 { font-size: 1.4em; }
+

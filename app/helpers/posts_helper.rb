@@ -1,5 +1,6 @@
 module PostsHelper
   
+  
   def popular_posts
     @popularPosts = Post.find(:all, :order => "comment_count desc", :limit => 10)
   end
@@ -15,4 +16,9 @@ module PostsHelper
   def archive_record
     @posts_by_month = Post.find(:all).group_by { |post| post.created_at.strftime("%B %Y") }
   end
+  
+  def tag_cloud_arr
+    @tags = Post.tag_counts_on(:tags)
+  end
+  
 end
