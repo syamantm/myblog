@@ -4,26 +4,27 @@
 <section>
 	<article class="blogPost">
 		<header>
-			<table>
-				<tr>
+			<header class="social">
+				<table>
+					<tr>
+						<td class='socialTableCell'>
+						<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
+						<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+						</td>
+						<td class="socialTableCell">
+						<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+						<script type="in/share">
+						</script>
+						</td>
+						<td class="socialTableCell">
+						<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+						<fb:like href="" layout="button_count" show_faces="false" width="20" font="">
+						</fb:like>
+						</td>
 
-					<td class='socialTableCell'>
-					<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
-					<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-					</td>
-					<td class="socialTableCell">
-					<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
-					<script type="in/share">
-					</script>
-					</td>
-					<td class="socialTableCell">
-					<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-					<fb:like href="" layout="button_count" show_faces="false" width="450" font="">
-					</fb:like>
-					</td>
-
-				</tr>
-			</table>
+					</tr>
+				</table>
+			</header>
 			<h2 property="dc:title"><%= @post.title %></h2>
 			<p>
 				Posted on
@@ -41,6 +42,8 @@
 		<p>
 		</p>
 	</article>
+	<div id="shareNice" >
+	</div>
 </section>
 <section id="comments">
 	<h3>Comments(<%= @post.comment_count %>)</h3>
