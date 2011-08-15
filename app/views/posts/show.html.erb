@@ -28,13 +28,15 @@
 			<h2 property="dc:title"><%= @post.title %></h2>
 			<p>
 				Posted on
-				<span property="dc:created"><%= @post.created_at.strftime("%B %d, %Y") %></span> by
+				<span property="dc:created"  datatype="xsd:dateTime" content="<%= @post.created_at%>"><%= @post.created_at.strftime("%B %d, %Y") %></span> by
 				<span property="dc:creator"><%= @post.name %></span>
 			</p>
 		</header>
 		<p>
 			<div about="<%= posts_url(@post) %>" typeof="sioc:Item foaf:Document">
-				<%= @post.content.html_safe %>
+				<div property="content:encoded">
+				<%=  @post.content.html_safe %>
+				</div>
 			</div>
 		</p>
 		<h4>Tags : </h4> <% for tag in @post.tags%>
