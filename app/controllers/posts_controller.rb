@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   #  @posts = Post.all
   #end
   def index
-    @posts = Post.paginate(:per_page => 6, :page => params[:page])
+    @posts = Post.paginate(:per_page => 6, :page => params[:page], :order => 'created_at DESC')
   end
 
   def monthlyarchive
