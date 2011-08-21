@@ -437,3 +437,10 @@ footer ul li a {
 	display: table-cell;
 	width: 300px;
 }
+
+
+/*  Tags */
+
+#tags{
+	font-size: 11px; 
+}
