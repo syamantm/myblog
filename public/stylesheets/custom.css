@@ -444,3 +444,24 @@ footer ul li a {
 #tags{
 	font-size: 11px; 
 }
+
+.welcomeTxt{	 
+	font-style: italic;	
+	position: relative;
+    margin-top: 66px;
+    padding: 44px;
+    /*background: #467612 ;*/
+    background-color: #D9F499;
+    /* Background-size not implemented yet */
+    -webkit-background-size: 100%;
+    -o-background-size: 100%;
+    -khtml-background-size: 100%;
+    /* Border-radius not implemented yet */
+    -moz-border-radius: 22px;
+    -webkit-border-radius: 22px;    
+}
+
+.welcomeTxt p{	 
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
