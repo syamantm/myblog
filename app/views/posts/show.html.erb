@@ -45,7 +45,7 @@
 			</div>
 		</p>
 		<div id="tags" class="jqueryAnchor">
-		<h3>Tags : </h3 <% for tag in @post.tags%>
+		<h3>Tags : </h3> <% for tag in @post.tags%>
 		<span rel="tag:tag" typeof="skos:Concept" property="rdfs:label skos:prefLabel"><%= link_to tag.name, searchtag_path(:tag => tag.name) %></span> <% end %>
 		</div>
 		<p>
