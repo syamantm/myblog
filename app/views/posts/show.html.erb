@@ -1,8 +1,9 @@
 <script>
 	$(function() {
-		$( "button, input:submit, a", ".jqueryAnchor" ).button();		
+		$("button, input:submit, a", ".jqueryAnchor").button();
 	});
-	</script>
+
+</script>
 <p class="notice">
 	<%= notice %>
 </p>
@@ -12,47 +13,42 @@
 			<header class="social">
 				<table>
 					<tr>
-						<td class='socialTableCell'>
-						<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a>
-						<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-						</td>
-						<td class="socialTableCell">
-						<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
-						<script type="in/share">
-						</script>
-						</td>
-						<td class="socialTableCell">
-						<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-						<fb:like href="" layout="button_count" show_faces="false" width="20" font="">
-						</fb:like>
-						</td>
+						<td class='socialTableCell'><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="funonrails">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></td>
+						<td class="socialTableCell"><script type="text/javascript" src="http://platform.linkedin.com/in.js"></script><script type="in/share"></script></td>
+						<td class="socialTableCell"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="" layout="button_count" show_faces="false" width="20" font=""></fb:like></td>
+						<td><g:plusone annotation="bubble" size="medium"></g:plusone>
+						<script type="text/javascript">
+							(function() {
+								var po = document.createElement('script');
+								po.type = 'text/javascript';
+								po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0];
+								s.parentNode.insertBefore(po, s);
+							})();
 
+						</script></td>
 					</tr>
 				</table>
 			</header>
 			<h2 property="dc:title"><%= @post.title %></h2>
 			<p>
-				Posted on
-				<span property="dc:created"  datatype="xsd:dateTime" content="<%= @post.created_at%>"><%= @post.created_at.strftime("%B %d, %Y") %></span> by
-				<span property="dc:creator"><%= @post.name %></span>
+				Posted on <span property="dc:created"  datatype="xsd:dateTime" content="<%= @post.created_at%>"><%= @post.created_at.strftime("%B %d, %Y") %></span> by <span property="dc:creator"><%= @post.name %></span>
 			</p>
 		</header>
 		<p>
 			<div about="<%= posts_url(@post) %>" typeof="sioc:Item foaf:Document">
 				<div property="content:encoded">
-				<%=  @post.content.html_safe %>
+					<%= @post.content.html_safe %>
 				</div>
 			</div>
 		</p>
 		<div id="tags" class="jqueryAnchor">
-		<h3>Tags : </h3> <% for tag in @post.tags%>
-		<span rel="tag:tag" typeof="skos:Concept" property="rdfs:label skos:prefLabel"><%= link_to tag.name, searchtag_path(:tag => tag.name) %></span> <% end %>
+			<h3>Tags : </h3> <% for tag in @post.tags%> <span rel="tag:tag" typeof="skos:Concept" property="rdfs:label skos:prefLabel"><%= link_to tag.name, searchtag_path(:tag => tag.name) %></span> <% end %>
 		</div>
-		<p>
-		</p>
+		<p></p>
 	</article>
-	<div id="shareNice" >
-	</div>
+	<div id="shareNice" ></div>
 </section>
 <section id="comments">
 	<h3>Comments(<%= @post.comment_count %>)</h3>
