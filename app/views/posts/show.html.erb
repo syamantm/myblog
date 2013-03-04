@@ -55,8 +55,10 @@
 	<%= render :partial => "comments/comment",
 	:collection => @post.comments %>
 </section>
+<% if @post.comments.size < 20 %>
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
 <br/>
 <% if signed_in? %>
 <%= link_to 'Edit Post', edit_post_path(@post) %> |<%= link_to 'Back to Posts', posts_path %> |<% end %>
+<% end %>
